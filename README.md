@@ -71,6 +71,7 @@ to add it manually , probably in your ```header.php``` template.
 // print : <img src="http://example.com/path/to/logo.png" alt="Website Title">    
  hyyan_the_logo(); 
 
+```
 
 ## Contributing
 
