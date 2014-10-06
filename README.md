@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/hyyan/logo-controller/license.svg)](https://packagist.org/packages/hyyan/logo-controller)
 
 Wordpress plugin to add new option for the theme customizer allowing the user to 
-change th logo in website and in login page",
+change th logo in website and in login page
 
 
 ## How to install
