@@ -8,11 +8,24 @@
  * Version: 0.1
  * Author URI: https://github.com/hyyan
  * Domain Path: /languages
- * Text Domain: hyyan-logo-controller
+ * Text Domain: logo-controller
  * License: MIT License
  */
 
 require_once __DIR__ . '/src/HyyanLogoController.php';
 require_once __DIR__ . '/src/functions.php';
 
+/**
+ * Add translation
+ */
+add_action('plugins_loaded', function() {
+    load_plugin_textdomain(
+            'logo-controller'
+            , false
+            , trailingslashit(basename(dirname(__FILE__))) . 'languages/'
+    );
+});
+/**
+ * Bootstrap the plugin
+ */
 add_action('customize_register', array('HyyanLogoController', 'setup'));
