@@ -20,7 +20,7 @@ class HyyanLogoController {
      * 
      * @param WP_Customize_Manager $manager
      */
-    public function setup(\WP_Customize_Manager $manager) {
+    public static function setup(\WP_Customize_Manager $manager) {
 
         $manager->add_section('hyyan_logo_section', array(
             'title' => __('Site Logo', 'hyyan-logo-controller')
@@ -36,7 +36,7 @@ class HyyanLogoController {
         )));
     }
 
-    public function getOptions() {
+    public static function getOptions() {
         $default = array(
             // path for default logo image relative to the theme dir
             'default' => '/logo.png',
@@ -50,7 +50,9 @@ class HyyanLogoController {
      * @return string
      */
     public static function getLogoUrl() {
-        return ($result = get_theme_mod('hyyan_logo_controller')) ? $result : false;
+        $setting = self::getOptions();
+        return ($result = get_theme_mod('hyyan_logo_controller')) && !empty($result) ?
+                $result : $setting['default'];
     }
 
 }
