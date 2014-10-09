@@ -24,7 +24,6 @@ class HyyanLogoController {
 
         $manager->add_section('hyyan_logo_section', array(
             'title' => __('Site Logo', 'hyyan-logo-controller')
-            , 'description' => __('Upload an image to the server and set the website logo', 'hyyan-logo-controller')
             , 'priority' => 0,
             'capability' => 'edit_theme_options',
         ));
