@@ -27,6 +27,7 @@ class HyyanLogoController {
         $manager->add_control(new WP_Customize_Image_Control($manager, 'hyyan_logo_controller_image', array(
             'label' => __('Choose your logo image', 'logo-controller')
             , 'section' => 'title_tagline'
+            , 'description' => __('Note : Depending on the current theme setting, the choosen logo might be used on the login page.', 'logo-controller')
         )));
     }
 
