@@ -21,6 +21,3 @@ msgstr "شعار الموقع"
 #: ../src/HyyanLogoController.php:33
 msgid "Choose your logo image"
 msgstr "قم باختيار صورة شعارك"
-
-#~ msgid "Upload an image to the server and set the website logo"
-#~ msgstr "سوف يتم رف الصورة"
