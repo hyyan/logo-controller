@@ -28,4 +28,5 @@ add_action('plugins_loaded', function() {
 /**
  * Bootstrap the plugin
  */
-add_action('customize_register', array('HyyanLogoController', 'setup'));
+add_action('customize_register', array('HyyanLogoController', 'addThemeCustomizeSupport'));
+add_action('login_head', array('HyyanLogoController', 'addLoginSupport'));

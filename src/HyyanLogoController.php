@@ -16,20 +16,60 @@
 class HyyanLogoController {
 
     /**
-     * Setup the logo controller
+     * Add Theme Customize Support
      * 
      * @param WP_Customize_Manager $manager
      */
-    public static function setup(\WP_Customize_Manager $manager) {
-        
+    public static function addThemeCustomizeSupport(\WP_Customize_Manager $manager) {
+
         // add the image filed
         $manager->add_setting('hyyan_logo_controller_image');
         $manager->add_control(new WP_Customize_Image_Control($manager, 'hyyan_logo_controller_image', array(
             'label' => __('Choose your logo image', 'logo-controller')
             , 'section' => 'title_tagline'
         )));
+    }
 
- 
+    /**
+     * Add the logo to the login page
+     * 
+     * Change the logo in the login page and also change the url href and title
+     * 
+     * @return boolean false if the optioh is disabled
+     */
+    public static function addLoginSupport() {
+
+        $setting = self::getOptions();
+        if (!$setting['enable-on-login-page'])
+            return false;
+
+        add_filter('login_headerurl', function() {
+            return get_bloginfo('url');
+        });
+        add_filter('login_headertitle', function() {
+            return get_bloginfo('description');
+        });
+
+        $url = static::getLogoUrl();
+        if (!empty($url)) {
+            list($width, $height, $type, $attr) = getimagesize($url);
+            print(
+                    '<style type="text/css">'
+                    . ".login h1 a {"
+                    . "     background-image: url('{$url}');"
+                    . "     background-size: 100%; "
+                    . "     width:100%;"
+                    . "     height:{$height}px;"
+                    . "}"
+                    . '</style>'
+            );
+        } else {
+            print(
+                    '<style type="text/css">'
+                    . ".login h1 a {display:none}"
+                    . '</style>'
+            );
+        }
     }
 
     public static function getOptions() {
@@ -39,7 +79,9 @@ class HyyanLogoController {
             //the logo url (default to home page)
             'url' => home_url('/'),
             // the logo desciption default to (get_bloginfo('name', 'display')) 
-            'description' => get_bloginfo('name', 'display')
+            'description' => get_bloginfo('name', 'display'),
+            // enable logo display on the login page
+            'enable-on-login-page' => true,
         );
         return apply_filters('Hyyan\LogoController.options', $default);
     }
@@ -51,8 +93,9 @@ class HyyanLogoController {
      */
     public static function getLogoUrl() {
         $setting = self::getOptions();
-        return ($result = get_theme_mod('hyyan_logo_controller_image')) && !empty($result) ?
-                $result : $setting['default'];
+        ($result = get_theme_mod('hyyan_logo_controller_image')) && !empty($result) ?
+                        $result : $setting['default'];
+        return esc_url($result);
     }
 
     /**
