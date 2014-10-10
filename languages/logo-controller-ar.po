@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hyyan Logo Controller\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-09 13:43-0800\n"
-"PO-Revision-Date: 2014-10-09 13:43-0800\n"
+"POT-Creation-Date: 2014-10-10 08:28-0800\n"
+"PO-Revision-Date: 2014-10-10 08:28-0800\n"
 "Last-Translator: Hyyan Abo Fakher <Tiribthea4hyyan@gmail.com>\n"
 "Language-Team:  <tiribthea4hyyan@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,10 +14,13 @@ msgstr ""
 "X-Poedit-Language: Arabic\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../src/HyyanLogoController.php:26
-msgid "Site Logo"
-msgstr "شعار الموقع"
-
-#: ../src/HyyanLogoController.php:33
+#: ../src/HyyanLogoController.php:28
 msgid "Choose your logo image"
 msgstr "قم باختيار صورة شعارك"
+
+#: ../src/HyyanLogoController.php:30
+msgid "Note : Depending on the current theme setting, the choosen logo might be used on the login page."
+msgstr "ملاحظة: اعتمادا على إعدادات الموضوع الحالي، من المحتمل استخدام الشعار المختار على صفحة تسجيل الدخول."
+
+#~ msgid "Site Logo"
+#~ msgstr "شعار الموقع"
