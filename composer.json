@@ -1,6 +1,6 @@
 {
     "name": "hyyan/logo-controller",
-    "description": "Wordpress plugin to add new option for the theme customizer allowing the user to change th logo",
+    "description": "Wordpress plugin to add new option for the theme customizer allowing the user to change th logo in website and the login page",
     "type": "wordpress-plugin",
     "license": "MIT",
     "authors": [
@@ -20,6 +20,7 @@
         "wordpress muplugin",
         "logo",
         "wordpress theme customizer",
+        "login logo",
         "hyyan",
         "bedrock"
     ],
