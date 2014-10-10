@@ -1,4 +1,4 @@
-# [Wordpress Flexible Widget Title ](https://github.com/hyyan/logo-controller/)
+# [Wordpress Logo Controller ](https://github.com/hyyan/logo-controller/)
 
 [![project status](http://stillmaintained.com/hyyan/logo-controller.png)](http://stillmaintained.com/hyyan/logo-controller)
 [![Latest Stable Version](https://poser.pugx.org/hyyan/logo-controller/v/stable.svg)](https://packagist.org/packages/hyyan/logo-controller)
