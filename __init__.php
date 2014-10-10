@@ -5,8 +5,9 @@
  * Plugin URI: https://github.com/hyyan/logo-controller/
  * Description: Wordpress plugin to add new option for the theme customizer allowing the user to change the logo
  * Author: Hyyan Abo Fakher
- * Version: 0.1
+ * Version: 0.2
  * Author URI: https://github.com/hyyan
+ * GitHub Plugin URI: hyyan/logo-controller
  * Domain Path: /languages
  * Text Domain: logo-controller
  * License: MIT License
