@@ -73,9 +73,14 @@ class HyyanLogoController {
         }
     }
 
+    /**
+     * Get options
+     *  
+     * @return array
+     */
     public static function getOptions() {
         $default = array(
-            // path for default logo image relative to the theme dir
+            // path for default logo image 
             'default' => '/logo.png',
             //the logo url (default to home page)
             'url' => home_url('/'),
