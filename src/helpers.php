@@ -16,7 +16,7 @@
  * @return string
  */
 function hyyan_get_the_logo() {
-    return HyyanLogoController::getLogoUrl();
+    return \Hyyan\LogoController\Plugin::getLogoUrl();
 }
 
 /**
@@ -28,5 +28,5 @@ function hyyan_get_the_logo() {
  * @see HyyanLogoController::printLogo
  */
 function hyyan_the_logo($path = null, $description = null) {
-    HyyanLogoController::printLogo($path, $description);
+    \Hyyan\LogoController\Plugin::printLogo($path, $description);
 }

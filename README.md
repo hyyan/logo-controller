@@ -5,9 +5,10 @@
 [![Total Downloads](https://poser.pugx.org/hyyan/logo-controller/downloads.svg)](https://packagist.org/packages/hyyan/logo-controller)
 [![License](https://poser.pugx.org/hyyan/logo-controller/license.svg)](https://packagist.org/packages/hyyan/logo-controller)
 
-Wordpress plugin to add new option for the theme customizer allowing the user to 
-change th logo in website and in login page
+Wordpress plugin to add new section for the customizer to allow the user to 
+change the logo for website and login page.
 
+![ScreenShot](https://raw.github.com/hyyan/logo-controller/master/screenshot-2.png)
 
 ## How to install
 
@@ -55,7 +56,7 @@ add_filter('Hyyan\LogoController.options', function(array $default) {
 });
 ```
 
-### Display the theme in my webiste page
+### Display the logo in your theme
 
 The plugin does not make any assumption about the place of your logo so you have
 to add it manually , probably in your ```header.php``` template.

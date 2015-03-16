@@ -8,23 +8,27 @@
  * file that was distributed with this source code.
  */
 
+namespace Hyyan\LogoController;
+
 /**
- * HyyanLogoController
+ * Hyyan Logo Controller Plugin
  *
  * @author Hyyan
  */
-class HyyanLogoController {
+class Plugin
+{
 
     /**
      * Add Theme Customize Support
      * 
      * @param WP_Customize_Manager $manager
      */
-    public static function addThemeCustomizeSupport(\WP_Customize_Manager $manager) {
+    public static function addThemeCustomizeSupport(\WP_Customize_Manager $manager)
+    {
 
         // add the image filed
         $manager->add_setting('hyyan_logo_controller_image');
-        $manager->add_control(new WP_Customize_Image_Control($manager, 'hyyan_logo_controller_image', array(
+        $manager->add_control(new \WP_Customize_Image_Control($manager, 'hyyan_logo_controller_image', array(
             'label' => __('Choose your logo image', 'logo-controller')
             , 'section' => 'title_tagline'
             , 'description' => __('Note : Depending on the current theme setting, the choosen logo might be used on the login page.', 'logo-controller')
@@ -38,7 +42,8 @@ class HyyanLogoController {
      * 
      * @return boolean false if the optioh is disabled
      */
-    public static function addLoginSupport() {
+    public static function addLoginSupport()
+    {
 
         $setting = self::getOptions();
         if (!$setting['enable-on-login-page'])
@@ -78,7 +83,8 @@ class HyyanLogoController {
      *  
      * @return array
      */
-    public static function getOptions() {
+    public static function getOptions()
+    {
         $default = array(
             // path for default logo image 
             'default' => '/logo.png',
@@ -97,7 +103,8 @@ class HyyanLogoController {
      * 
      * @return string
      */
-    public static function getLogoUrl() {
+    public static function getLogoUrl()
+    {
         $setting = self::getOptions();
         ($result = get_theme_mod('hyyan_logo_controller_image')) && !empty($result) ?
                         $result : $setting['default'];
@@ -112,7 +119,8 @@ class HyyanLogoController {
      * 
      * @see HyyanLogoController::getLogoUrl()
      */
-    public static function printLogo($path = null, $description = null) {
+    public static function printLogo($path = null, $description = null)
+    {
 
         $setting = static::getOptions();
 
